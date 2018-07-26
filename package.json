@@ -1,0 +1,60 @@
+{
+  "name": "electron-get-started",
+  "version": "1.0.0",
+  "main": "app/dist/main",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "watch": "gulp watch",
+    "dev": "run-p start watch"
+  },
+  "dependencies": {
+    "electron": "2.0.5",
+    "menubar": "5.2.3"
+  },
+  "devDependencies": {
+    "babel-core": "6.26.3",
+    "babel-plugin-transform-class-properties": "6.24.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "6.26.2",
+    "babel-preset-stage-3": "6.24.1",
+    "cssnano": "4.0.3",
+    "del": "3.0.0",
+    "devtron": "1.4.0",
+    "electron-builder": "20.24.4",
+    "electron-connect": "0.6.3",
+    "electron-react-devtools": "0.5.3",
+    "gulp": "4.0.0",
+    "gulp-babel": "7.0.1",
+    "gulp-filter": "5.1.0",
+    "gulp-inject-svg": "0.1.18",
+    "gulp-postcss": "7.0.1",
+    "gulp-pug": "4.0.1",
+    "gulp-stylelint": "7.0.0",
+    "husky": "0.14.3",
+    "npm-run-all": "4.1.3",
+    "postcss-each": "0.10.0",
+    "postcss-extend": "1.0.5",
+    "postcss-import": "11.1.0",
+    "postcss-nested": "3.0.0",
+    "postcss-reporter": "5.0.0",
+    "postcss-simple-vars": "4.1.0",
+    "semver": "5.5.0",
+    "stylelint": "9.3.0",
+    "stylelint-config-xo-space": "0.8.0",
+    "xo": "0.21.1"
+  },
+  "babel": {
+    "presets": [
+      "stage-3"
+    ],
+    "plugins": [
+      "transform-es2015-modules-commonjs",
+      [
+        "transform-class-properties",
+        {
+          "spec": true
+        }
+      ]
+    ]
+  }
+}

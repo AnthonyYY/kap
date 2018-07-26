@@ -1,0 +1,40 @@
+mixin icon(name)
+    img(src=`/app/static/${name}.svg`)&attributes(attributes)
+
+mixin window-header
+    - var a = attributes
+    header.window-header(class!=a.class)
+        .title-bar
+            .title-bar__controls(class=a.invisibleControls ? 'is-invisible' : '')
+                +icon('traffic-light-close')(class=a.hide ? 'hide-window' : 'close-window')
+                +icon('traffic-light-minimize').minimize-window
+                +icon('traffic-light-disabled').maximize-window
+            span.window__title.txt=a.title
+        
+
+mixin toggle(name)
+    .c-toggle(class!=attributes.class)
+        input.c-toggle__input(type="checkbox" id=name disabled=attributes.disabled)
+        label.c-toggle__label(for=name)
+
+
+mixin range
+    - var a = attributes.
+    .c-range(class != a.class)
+        input(type="range")
+        if a.hasLabels
+            .c-range-labels
+                .c-range-label=a.lowLabel
+                .c-range-label.is-middle.js-middle-label=a.middleLabel
+                .r-range-label=a.highLabel
+
+mixin select-custom
+    .c-select&attributes(attributes)
+        +icon('dropdown-arrow').c-select__toggle-icon
+        block
+
+mixin stylesheet(name)
+    link(rel="stylesheet", href=`../css/${name}.css`)
+
+mixin script(name)
+    script(src=`../js/${name}.js`)
